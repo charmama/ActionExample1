@@ -14,7 +14,7 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: First build it with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build --configuration Debug
     - name: And then we test it
-      run: dotnet test --configuration Release  --no-build --no-restore --verbosity normal
+      run: dotnet test --configuration Debug --no-build --no-restore --verbosity normal
       
