@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Download cake
+      run: 'build.ps1","build.cake" | %{Invoke-RestMethod -Uri "https://raw.githubusercontent.com/cake-build/bootstrapper/master/res/scripts/$($_)" -OutFile $_}'
     - name: Build with cake
       run: .\build.ps1
       shell: pwsh
